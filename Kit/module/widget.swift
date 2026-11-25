@@ -28,6 +28,8 @@ public enum widget_t: String {
     case state = "state"
     case text = "text"
     case icon = "icon"
+    case free = "free"
+    case used = "used"
     
     public func new(module: String, config: NSDictionary, defaultWidget: widget_t, icon: NSImage? = nil) -> SWidget? {
         guard let widgetConfig: NSDictionary = config[self.rawValue] as? NSDictionary else { return nil }
@@ -67,6 +69,8 @@ public enum widget_t: String {
             return DotWidget(title: module, config: widgetConfig, preview: preview)
         case .text:
             return TextWidget(title: module, preview: preview)
+        case .free, .used:
+            return SpaceWidget(self, title: module, config: widgetConfig, preview: preview)
         case .icon:
             return IconWidget(title: module, config: widgetConfig, icon: icon, preview: preview)
         default: return nil
@@ -136,6 +140,8 @@ public enum widget_t: String {
         case .state: return localizedString("State widget")
         case .text: return localizedString("Text widget")
         case .icon: return localizedString("Icon widget")
+        case .free: return localizedString("Free space widget")
+        case .used: return localizedString("Used space widget")
         default: return ""
         }
     }

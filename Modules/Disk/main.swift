@@ -312,6 +312,7 @@ public class Disk: Module {
             switch w.item {
             case let widget as Mini: widget.setValue(d.percentage)
             case let widget as BarChart: widget.setValue([[ColorValue(d.percentage)]])
+            case let widget as SpaceWidget: widget.setValue(widget.type == .used ? d.size - d.free : d.free)
             case let widget as MemoryWidget:
                 widget.setValue((DiskSize(d.free).getReadableMemory(), DiskSize(d.size - d.free).getReadableMemory()), usedPercentage: d.percentage)
             case let widget as PieChart:

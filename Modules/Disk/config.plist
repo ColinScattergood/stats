@@ -39,6 +39,38 @@
 			<key>Order</key>
 			<integer>1</integer>
 		</dict>
+		<key>free</key>
+		<dict>
+			<key>Default</key>
+			<false/>
+			<key>Title</key>
+			<string>SSD Free</string>
+			<key>Preview</key>
+			<dict>
+				<key>Title</key>
+				<string>SSD Free</string>
+				<key>Value</key>
+				<string>48GB</string>
+			</dict>
+			<key>Order</key>
+			<integer>9</integer>
+		</dict>
+		<key>used</key>
+		<dict>
+			<key>Default</key>
+			<false/>
+			<key>Title</key>
+			<string>SSD Used</string>
+			<key>Preview</key>
+			<dict>
+				<key>Title</key>
+				<string>SSD Used</string>
+				<key>Value</key>
+				<string>185GB</string>
+			</dict>
+			<key>Order</key>
+			<integer>10</integer>
+		</dict>
 		<key>bar_chart</key>
 		<dict>
 			<key>Default</key>
